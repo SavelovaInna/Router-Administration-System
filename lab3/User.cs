@@ -32,6 +32,5 @@ namespace lab3
             Properties.Settings.Default.hash = "";
             Properties.Settings.Default.Save();
         }
-
     }
 }

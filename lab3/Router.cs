@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace lab3
 {
     class Router
     {
-        RouterParametersService parameterService;
-        RoutingTable table;
-        public Router()
+        InterfaceRouterParametrsServise parameterService;
+        InterfaceRoutingTable table;
+        public Router(InterfaceRouterParametrsServise parameterService,InterfaceRoutingTable table)
         {
-            parameterService = new RouterParametersService();
-            table = new RoutingTable();
+            this.parameterService = parameterService;
+            this.table = table;
         }
         public void Load()
         {
@@ -52,7 +53,6 @@ namespace lab3
             parameterService.SaveInterface(i, netInterface);
             return true;          
         }
-
         public List<RoutingRecord> GetRoutingTable(Query query)
         {
             return table.GetRoutingTable(query);
@@ -61,10 +61,9 @@ namespace lab3
         {
             table.AddRecord(record);
         }
-        public bool DeleteRoutingRecord(RoutingRecord record)
+        public void DeleteRoutingRecord(RoutingRecord record)
         {
-            return table.DelRecord(record);
+            table.DelRecord(record);
         }
-
     }
 }

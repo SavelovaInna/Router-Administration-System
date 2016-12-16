@@ -21,6 +21,7 @@ namespace lab3
             stringValue = "";
         }
     }
+
     public class IpSetting : Setting
     {
         private Regex rgxIp = new Regex(@"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?(\.|$)){4}");
@@ -29,6 +30,7 @@ namespace lab3
             return rgxIp.IsMatch(value) || value.Equals("");
         }
     }
+
     public class MacSetting : Setting
     {
         private Regex rgxMac = new Regex(@"([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}");
@@ -37,6 +39,7 @@ namespace lab3
             return rgxMac.IsMatch(value) || value.Equals("");
         }
     }
+
     public class FrequencySetting : Setting
     {
         double DoubleValue;

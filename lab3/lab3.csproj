@@ -68,12 +68,14 @@
     <Compile Include="FormRoutingRecord.Designer.cs">
       <DependentUpon>FormRoutingRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceRouterParametrsServise.cs" />
+    <Compile Include="InterfaceRoutingTable.cs" />
     <Compile Include="NetInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="Router.cs" />
-    <Compile Include="routerServise.cs" />
+    <Compile Include="routerParametrsServise.cs" />
     <Compile Include="RoutingRecord.cs" />
     <Compile Include="RoutingTable.cs" />
     <Compile Include="Setting.cs" />

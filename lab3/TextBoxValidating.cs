@@ -33,21 +33,4 @@ namespace lab3
                 Text = lastText;
         }
     }
-    /*class TextBoxMac : TextBoxValidating
-    {
-        protected override bool IsValidating(string s)
-        {
-            Regex rgxMac = new Regex(@"([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}");
-            return rgxMac.IsMatch(s);
-        }
-    }
-    class TextBoxIp : TextBoxValidating
-    {
-        protected override bool IsValidating(string s)
-        {
-            Regex rgxIp = new Regex(@"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?(\.|$)){4}");
-            return rgxIp.IsMatch(s);
-        }
-    }*/
-
 }

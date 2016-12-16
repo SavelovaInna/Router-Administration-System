@@ -8,17 +8,16 @@
         {
             return new AndQuery(this, other);
         }
-
         public Query Or(Query other)
         {
             return new OrQuery(this, other);
         }
-
         public Query Not()
         {
             return new NotQuery(this);
         }
     }
+
     public class AndQuery : Query
     {
         private Query one;
@@ -29,7 +28,6 @@
             one = x;
             other = y;
         }
-
         public override bool IsSatisfiedBy(object candidate)
         {
             return one.IsSatisfiedBy(candidate) && other.IsSatisfiedBy(candidate);
@@ -46,7 +44,6 @@
             one = x;
             other = y;
         }
-
         public override bool IsSatisfiedBy(object candidate)
         {
             return one.IsSatisfiedBy(candidate) || other.IsSatisfiedBy(candidate);
@@ -61,7 +58,6 @@
         {
             one = x;
         }
-
         public override bool IsSatisfiedBy(object candidate)
         {
             return !one.IsSatisfiedBy(candidate);

@@ -5,22 +5,21 @@ namespace lab3
 {
     public partial class FormInterface : Form
     {
-        NetInterface interf;
-        public FormInterface(NetInterface interf)
+        NetInterface netInterface;
+        public FormInterface(NetInterface netInterface)
         {
             InitializeComponent();
-            this.interf = interf;
+            this.netInterface = netInterface;
         }
         public NetInterface Interface {
             get
             {
-                return interf;
+                return netInterface;
             }
         }
-
         private void FormInterface_Load(object sender, EventArgs e)
         {
-            foreach (string setName in interf.Settings.Keys)
+            foreach (string setName in netInterface.Settings.Keys)
             {
                 Label label = new Label();
                 label.Text = setName;
@@ -28,8 +27,8 @@ namespace lab3
 
                 TextBoxValidating textBox = new TextBoxValidating();
                 textBox.Width += 20;
-                textBox.IsValidating = interf.Settings[setName].IsFormat;
-                textBox.Text = interf.Settings[setName].Value;
+                textBox.IsValidating = netInterface.Settings[setName].IsFormat;
+                textBox.Text = netInterface.Settings[setName].Value;
                 this.Controls.Add(textBox);
                 tableLayoutPanel1.Controls.Add(textBox);
 
@@ -48,15 +47,13 @@ namespace lab3
             buttonCancel.DialogResult = DialogResult.Cancel;
             tableLayoutPanel1.Controls.Add(buttonCancel);
         }
-
         private void buttonOk_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < tableLayoutPanel1.RowCount - 1; i++)
             {
-                interf.ChangeSetting(tableLayoutPanel1.GetControlFromPosition(0, i).Text,
+                netInterface.ChangeSetting(tableLayoutPanel1.GetControlFromPosition(0, i).Text,
                     tableLayoutPanel1.GetControlFromPosition(1, i).Text);
             }
         }
-
     }
 }

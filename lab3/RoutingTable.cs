@@ -4,34 +4,37 @@ using System;
 
 namespace lab3
 {
-    class RoutingTable
+    class RoutingTable : InterfaceRoutingTable
     {
         List<RoutingRecord> table;
-        string path = "routingConfig.txt";
-        public RoutingTable()
+        string path;
+        public RoutingTable(string path)
         {
+            this.path = path;
             table = new List<RoutingRecord>();
         }
         public void Load()
         {
-            StreamReader reader = new StreamReader(path);
-            string s;
-            while ((s = reader.ReadLine()) != null)
+            using (StreamReader reader = new StreamReader(path))
             {
-                string[] split = s.Split(' ');
-                RoutingRecord record = new RoutingRecord();
-                record.SetParameters(split[0], split[1], split[2], 
-                    Convert.ToInt32(split[3]));
-                table.Add(record);
+                string s;
+                while ((s = reader.ReadLine()) != null)
+                {
+                    string[] split = s.Split(' ');
+                    RoutingRecord record = new RoutingRecord();
+                    record.SetParameters(split[0], split[1], split[2],
+                        Convert.ToInt32(split[3]));
+                    table.Add(record);
+                }
             }
-            reader.Close();
         }
         public void Save()
         {
-            StreamWriter writer = new StreamWriter(path);
-            table.ForEach(r =>writer.WriteLine("{0} {1} {2} {3}",
-                r.dest, r.mask, r.gateway,r.metric));
-            writer.Close();
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                table.ForEach(r => writer.WriteLine("{0} {1} {2} {3}",
+                    r.dest, r.mask, r.gateway, r.metric));
+            }
         }
         public void Reset()
         {
@@ -41,12 +44,9 @@ namespace lab3
         {
             table.Add(record);
         }
-        public bool DelRecord(RoutingRecord record)
+        public void DelRecord(RoutingRecord record)
         {
-            bool f = table.Contains(record);
-            if (f)
-                table.Remove(record);
-            return f;
+            table.Remove(record);
         }
         public List<RoutingRecord> GetRoutingTable(Query query)
         {
@@ -58,6 +58,5 @@ namespace lab3
             }
             return queryTable;
         }
-
     }
 }

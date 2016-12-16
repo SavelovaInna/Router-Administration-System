@@ -14,11 +14,12 @@ namespace lab3
         {
             InitializeComponent();
         }
-
         private void form_Load(object sender, EventArgs e)
         {
             FormAuthentification form = new FormAuthentification();
-            router = new Router();
+            InterfaceRouterParametrsServise parametrServise = new RouterParametersService("parConfig.txt");
+            InterfaceRoutingTable routingTable = new RoutingTable("routingConfig.txt");
+            router = new Router(parametrServise,routingTable);
             router.Load();
             if (form.ShowDialog() != DialogResult.OK)
                 this.Close();           
@@ -33,7 +34,6 @@ namespace lab3
             var items = interfaces.Select(i => new ListViewItem(new string[] { i.name, i.Settings["ip"].Value }));
             listViewInterface.Items.AddRange(items.ToArray());
         }
-
         private void UpdateDataGrid()
         {
             Query queryDest = new DestQuery(textBoxDest.Text);
@@ -54,12 +54,10 @@ namespace lab3
                     break;
             }
         }
-
         private void buttonChangeMac_Click(object sender, EventArgs e)
         {
             router.SetMac(textBoxMac.Text);
         }
-
         private void listViewInterface_DoubleClick(object sender, EventArgs e)
         {
             if (listViewInterface.SelectedIndices.Count > 0)
@@ -73,7 +71,6 @@ namespace lab3
                 }
             }
         }
-
         private void textBoxDest_TextChanged(object sender, EventArgs e)
         {
             UpdateDataGrid();
@@ -83,7 +80,6 @@ namespace lab3
         {
             UpdateDataGrid();
         }
-
         private void buttonAddRoutingRecord_Click(object sender, EventArgs e)
         {
             FormRoutingRecord form = new FormRoutingRecord();
@@ -94,29 +90,32 @@ namespace lab3
                 router.AddRoutingRecord(form.record);
             }
         }
-
         private void DelRotingRecord_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dataGridView1.SelectedRows[0];
-            RoutingRecord record = new RoutingRecord();
-            record.SetParameters((string)row.Cells["dest"].Value,
-                (string)row.Cells["mask"].Value,
-                (string)row.Cells["gateway"].Value,
-                Convert.ToInt32(row.Cells["metric"].Value));
-            router.DeleteRoutingRecord(record);
-            dataGridView1.Rows.Remove(row);
+            try
+            {
+                DataGridViewRow row = dataGridView1.SelectedRows[0];          
+                RoutingRecord record = new RoutingRecord();
+                record.SetParameters((string)row.Cells["dest"].Value,
+                    (string)row.Cells["mask"].Value,
+                    (string)row.Cells["gateway"].Value,
+                    Convert.ToInt32(row.Cells["metric"].Value));
+                    router.DeleteRoutingRecord(record);
+                dataGridView1.Rows.Remove(row);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Выберите строку для удаления");
+            }
         }
-
         private void buttonReset_Click(object sender, EventArgs e)
         {
             User.Reset();
             router.Reset();
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             router.Save();
-        }
-     
+        }     
     }
 }

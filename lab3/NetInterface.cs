@@ -14,8 +14,7 @@ namespace lab3
             {
                 return settings;
             }
-        }
-       
+        }     
         public NetInterface(int number, string mac)
         {   
             settings=new Dictionary<string,Setting>();
@@ -39,6 +38,7 @@ namespace lab3
             return name;
         }
     }
+
     public class Wifi : NetInterface
     {
         public Wifi(int number,string mac) :base(number,mac)
@@ -52,6 +52,7 @@ namespace lab3
             }
         }
     }
+
     public class Ethernet : NetInterface
     {
         public Ethernet(int number, string mac) :base(number, mac){}
@@ -63,6 +64,7 @@ namespace lab3
             }
         }
     }
+
     public class Console : NetInterface
     {
         public Console(int number, string mac) :base(number, mac){}

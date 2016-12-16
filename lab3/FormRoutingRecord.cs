@@ -22,7 +22,6 @@ namespace lab3
             textBoxMask.IsValidating = IpValidating;
             textBoxMask.Text = "255.255.255.0";
         }
-
         private void buttonОк_Click(object sender, EventArgs e)
         {
             if (textBoxDest.Text.Equals("") || textBoxMask.Text.Equals("") ||
@@ -40,7 +39,5 @@ namespace lab3
                 DialogResult = DialogResult.OK;
             }
         }
-
-
     }
 }

@@ -10,13 +10,11 @@ namespace lab3
         {
             InitializeComponent();
         }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             User.AddUser(textBoxLogin.Text, textBoxPassword.Text);
             DialogResult = DialogResult.OK;
         }
-
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             if (User.Authentificate(textBoxLogin.Text, textBoxPassword.Text))
@@ -24,7 +22,6 @@ namespace lab3
             else
                 MessageBox.Show("Логин или пароль не верны");
         }
-
         private void FormAuthentification_Load(object sender, EventArgs e)
         {
             if (User.IsExistUser())
@@ -38,6 +35,5 @@ namespace lab3
                 button.Click += new System.EventHandler(this.buttonAdd_Click);
             }            
         }
-
     }
 }
