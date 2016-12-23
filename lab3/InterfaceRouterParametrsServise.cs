@@ -2,7 +2,7 @@
 
 namespace lab3
 {
-    interface InterfaceRouterParametrsServise
+    public interface InterfaceRouterParametrsServise
     {
         void Load();
         void Save();      

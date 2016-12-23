@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace lab3
 {
-    class Router
+    public class Router
     {
         InterfaceRouterParametrsServise parameterService;
         InterfaceRoutingTable table;

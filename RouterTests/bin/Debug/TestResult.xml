@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\RouterTests.dll" total="8" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2016-12-23" time="20:48:05">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8745" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug" machine-name="SAMSUNG" user="User" user-domain="SAMSUNG" />
+  <culture-info current-culture="ru-RU" current-uiculture="ru-RU" />
+  <test-suite type="Assembly" name="C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\RouterTests.dll" executed="True" result="Success" success="True" time="0.220" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="RouterTests" executed="True" result="Success" success="True" time="0.210" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="TestRouter" executed="True" result="Success" success="True" time="0.206" asserts="0">
+            <results>
+              <test-case name="RouterTests.TestRouter.TestAddRoutingRecord" executed="True" result="Success" success="True" time="0.144" asserts="1" />
+              <test-case name="RouterTests.TestRouter.TestDelRoutingRecord" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="RouterTests.TestRouter.TestGetInterfases" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+              <test-case name="RouterTests.TestRouter.TestGetMac" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="RouterTests.TestRouter.TestGetRoutingTable" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+              <test-case name="RouterTests.TestRouter.TestReset" executed="True" result="Success" success="True" time="0.003" asserts="3" />
+              <test-case name="RouterTests.TestRouter.TestSaveInterface" executed="True" result="Success" success="True" time="0.003" asserts="2" />
+              <test-case name="RouterTests.TestRouter.TestSetMac" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

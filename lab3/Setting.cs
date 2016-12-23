@@ -20,6 +20,11 @@ namespace lab3
         {
             stringValue = "";
         }
+        public override bool Equals(object obj)
+        {
+            return obj is Setting && Value == ((Setting)obj).Value ||
+                obj is String && Value.Equals(obj);
+        }
     }
 
     public class IpSetting : Setting

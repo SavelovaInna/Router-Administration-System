@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\RouterTests.dll
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\RouterTests.pdb
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\lab3.exe
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\nunit.framework.dll
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\lab3.pdb
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\bin\Debug\nunit.framework.xml
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\obj\Debug\RouterTests.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\obj\Debug\RouterTests.dll
+C:\Users\User\Desktop\ТиМ программирования\lab4\Router-Administration-System\RouterTests\obj\Debug\RouterTests.pdb

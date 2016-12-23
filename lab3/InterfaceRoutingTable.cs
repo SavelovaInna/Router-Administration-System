@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab3
 {
-    interface InterfaceRoutingTable
+    public interface InterfaceRoutingTable
     {
         void Load();       
         void Save();        
